@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: zhang
+    url: jdbc:mysql://localhost/qwe?useSSL=false&amp;serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.jdbc.Driver
+    
+mybatis:
+  mybatis.mapper-location: classpath:mapper/*.xml
+  mybatis.type-aliases-packge: edu.swjtuhc.demo.mapper

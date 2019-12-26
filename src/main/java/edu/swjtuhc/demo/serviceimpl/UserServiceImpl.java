@@ -11,28 +11,20 @@ import edu.swjtuhc.demo.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
-	
 	@Autowired
-	UserMapper UserMapper;
-
+	UserMapper userMapper;
 	@Override
-	public List<SysUser> selectUsers() {
+	public int register(SysUser user) {
 		// TODO Auto-generated method stub
-		return UserMapper.selectAllUsers();
+		SysUser u1 =userMapper.selectUserByUsername(user.getUsername());
+		int i=1;
+		if(u1==null) {
+			i=userMapper.insertUser(user);
+		}else {
+			i=0;
+		}
+		return i;
 	}
-
-	@Override
-	public List<SysUser> selectAllUsers() {
-		// TODO Auto-generated method stub
-		return UserMapper.selectAllUsers();
-	}
-
-	@Override
-	public List<SysUser> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 	
 }

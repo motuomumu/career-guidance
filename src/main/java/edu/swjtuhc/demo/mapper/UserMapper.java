@@ -11,4 +11,5 @@ public interface UserMapper {
 	
 	
 	public int insertUser(SysUser user);
+	
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.OrphanageMapper">
+	<resultMap type="edu.swjtuhc.demo.model.Orphanage" id="orphanage_result">
+		<id column="or_id" javaType="java.lang.Integer" property="Orid" jdbcType="INTEGER"/>
+		<result column="or_name" property="Orname" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="or_address" property="Oraddress" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="or_member" property="Ormember" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	<!-- 告诉select它的返回值类型去映射到上面 -->
+	<select id="selectAllOrphanage" resultMap="orphanage_result">
+		select * from orphanage
+	</select>
+
+</mapper>

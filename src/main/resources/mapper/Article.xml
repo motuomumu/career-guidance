@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.ArticleMapper">
+	<resultMap id="AResultMap"
+		type="edu.swjtuhc.demo.model.Article">
+		<id column="a_id" property="aId" jdbcType="BIGINT" />
+		<result column="a_article" property="article" jdbcType="VARCHAR" />
+		<result column="a_name" property="Aname" jdbcType="VARCHAR" />
+		<result column="a_writer" property="writer" jdbcType="VARCHAR" />
+		<result column="a_publicDate"
+			property="publicDate" jdbcType="TIMESTAMP"
+			javaType="java.sql.Timestamp" />
+	</resultMap>	
+	<sql id="Base_Column_List">
+		a_id,a_article,a_writer,a_publicDate,a_name
+	</sql>
+	<sql id="name_time_Column_List">
+		a_publicDate,a_name
+	</sql>
+<insert id="createArticle"
+		parameterType="edu.swjtuhc.demo.model.Article">
+		INSERT INTO
+		article
+		(a_id,a_publicDate,a_article,a_writer,a_name)
+		values
+		(#{aId},#{apublicDate},#{article},#{writer},#{aAame})
+	</insert>
+	<select id="getArticle" parameterType="java.lang.String"
+		resultMap="AResultMap">
+		select
+		<include refid="Base_Column_List"></include>
+		from article
+		where a_id = #{aId}
+	</select>
+	<update id="updateArticle"
+		parameterType="edu.swjtuhc.demo.model.Article">
+		UPDATE
+		article
+		SET
+		a_article = #{article},a_writer =
+		#{writer},a_publicDate=#{publicDate},a_name=#{Aname}
+		WHERE
+		a_id = #{aId}
+	</update>
+	<delete id="deleteArticle" parameterType="java.lang.Long">
+		DELETE FROM
+		article
+		Where
+		a_id = #{aId}
+	</delete>
+	<select id="selectAllArticle" parameterType="java.lang.String"
+		resultMap="AResultMap">
+		select
+		*
+		from article
+		a_id = #{aId}
+	</select>
+	<select id="selectArticle" parameterType="java.lang.String"
+		resultMap="AResultMap">
+		select
+		<include refid="name_time_Column_List"></include>
+		from article
+	</select>
+</mapper> 

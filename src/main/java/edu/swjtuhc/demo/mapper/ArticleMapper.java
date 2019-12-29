@@ -12,6 +12,5 @@ public interface ArticleMapper {
 	Integer createArticle(Article Article);
 	Integer updateArticle(Article Article);
 	Integer deleteArticle(Article Article);
-	public List<Article> selectAllArticle();
-	public List<Article> seleArticles();
+	
 }

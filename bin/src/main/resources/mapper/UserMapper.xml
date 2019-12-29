@@ -5,22 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="edu.swjtuhc.demo.mapper.UserMapper"><!-- 映射文件对应的接口 -->
 
-	<resultMap type="demo-1.model.SysUser" id="user_result">
-	<!--列 属性   -->
-	<result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="password" property="password" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="name" property="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	<result column="age" property="age" javaType="java.lang.Integer" jdbcType="INTEGER"/>
-	<result column="sex" property="gender" javaType="java.lang.String" jdbcType="VARCHAR"/>
-	
-	</resultMap>
-	
-	
- 
-   
-   <select id="selectAllUsers" resultMap="user_result">
-   	select *from sysuser
-   	
+	<insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">
+		insert into sysuser
+		(uid,username,password,region,role)
+		values
+		(#{uid},#{username},#{password},#{region},#{role})
+	</insert>
+   <select id="selectUserByUsername" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.SysUser">
+   		select *from sysuser
    </select>   
- 
 </mapper>

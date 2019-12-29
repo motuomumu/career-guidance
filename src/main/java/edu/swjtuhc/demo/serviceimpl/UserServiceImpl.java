@@ -16,12 +16,15 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int register(SysUser user) {
 		// TODO Auto-generated method stub
-		SysUser u1 =userMapper.selectUserByUsername(user.getUsername());
-		int i=1;
-		if(u1==null) {
+		SysUser u0 =userMapper.selectUserByUsername(user.getUsername());
+		System.out.println(user);
+		int i=-1;
+		if(u0==null) {
+			System.out.println(user);
 			i=userMapper.insertUser(user);
+			
 		}else {
-			i=0;
+			i=2;
 		}
 		return i;
 	}

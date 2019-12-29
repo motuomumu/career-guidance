@@ -1,4 +1,4 @@
-package edu.swjtuhc.demo.serviceImpl;
+package edu.swjtuhc.demo.serviceimpl;
 
 import java.util.Date;
 

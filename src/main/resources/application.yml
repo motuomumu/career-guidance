@@ -1,10 +1,10 @@
 spring:
   datasource:
     username: root
-    password: 3320907zel
-    url: jdbc:mysql://localhost:2000/jjq?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    password: zhang
+    url: jdbc:mysql://localhost:3308/shanxing?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     
 mybatis:
-  mybatis.mapper-location: classpath*:mapper/*.xml
-  mybatis.type-aliases-packge: edu.swjtuhc.demo.mapper
+  mapper-location: classpath*:mapper/*.xml
+  type-aliases-packge: edu.swjtuhc.demo.mapper

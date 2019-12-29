@@ -1,11 +1,18 @@
 package edu.swjtuhc.demo.model;
 
 public class SysUser {
+	int UID;
 	private String username;
 	private String password;
 	private String region;
 	private String role;
-	private int uid;
+	
+	public int getUID() {
+		return UID;
+	}
+	public void setUID(int uID) {
+		UID = uID;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -18,13 +25,6 @@ public class SysUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getUid() {
-		return uid;
-	}
-	public void setUid(int uid) {
-		this.uid = uid;
-	}
-	
 	public String getRegion() {
 		return region;
 	}
@@ -40,7 +40,7 @@ public class SysUser {
 	@Override
 	public String toString() {
 		return "SysUser [username=" + username + ", password=" + password + ", region=" + region + ", role=" + role
-				+ ", uid=" + uid + "]";
+				+ ", UID=" + UID + "]";
 	}
 	
 }

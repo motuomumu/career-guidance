@@ -11,7 +11,7 @@ import edu.swjtuhc.demo.service.TimeService;
 import net.sf.json.JSONObject;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/time")
 public class TimeController {
 
 	@Autowired

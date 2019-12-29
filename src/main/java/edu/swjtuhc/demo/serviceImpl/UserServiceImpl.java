@@ -1,4 +1,4 @@
-package edu.swjtuhc.demo.serviceimpl;
+package edu.swjtuhc.demo.serviceImpl;
 
 import java.util.List;
 

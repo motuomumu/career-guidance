@@ -28,5 +28,4 @@ public class UserController {
 			result.put("state", i);
 			return result;
 		}
-		
 }

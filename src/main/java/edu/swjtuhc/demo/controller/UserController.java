@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.swjtuhc.demo.model.SysUser;
+import edu.swjtuhc.demo.model.UserRequest;
+import edu.swjtuhc.demo.model.UserResponse;
 import edu.swjtuhc.demo.service.UserService;
 
 
@@ -29,9 +31,21 @@ public class UserController {
 			result.put("state", i);
 			return result;
 		}
-//		@RequestMapping(value = "/login", method = RequestMethod.POST)
-//		public JSONObject login(@RequestBody Sysuser user) {
-//			JSONObject result = new JSONObject();
-//		}
+		@RequestMapping(value = "/login", method = RequestMethod.POST)
+		public JSONObject login(@RequestBody UserRequest userrequest) {
+			JSONObject result = new JSONObject();
+			try {
+	    		final String token = userService.login(userrequest.getUsername(), userrequest.getPassword());
+	    		UserResponse user = new UserResponse(token);
+	    		result.put("state", "success");
+	    		result.put("token", user.getToken());
+	    	} catch (Exception e) {
+				// TODO: handle exception
+	    		e.printStackTrace();
+	    		result.put("state", "fail");
+	    		result.put("msg", "用户名或密码错误");
+			}
+			return result;
+		}
 		 
 }

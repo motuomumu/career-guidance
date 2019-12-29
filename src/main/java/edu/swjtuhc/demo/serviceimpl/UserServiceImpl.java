@@ -28,6 +28,12 @@ public class UserServiceImpl implements UserService{
 		}
 		return i;
 	}
+	@Override
+	public String login(String username, String password) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
 	
 	
 }

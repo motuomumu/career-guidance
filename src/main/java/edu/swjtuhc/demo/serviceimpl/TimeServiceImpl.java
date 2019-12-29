@@ -1,4 +1,4 @@
-package edu.swjtuhc.demo.serviceimpl;
+package edu.swjtuhc.demo.serviceImpl;
 
 import edu.swjtuhc.demo.mapper.TimeMapper;
 import edu.swjtuhc.demo.model.Time;

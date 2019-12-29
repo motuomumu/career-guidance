@@ -1,4 +1,4 @@
-package edu.swjtuhc.demo.serviceimpl;
+package edu.swjtuhc.demo.serviceImpl;
 
 import java.util.List;
 
@@ -27,12 +27,6 @@ public class UserServiceImpl implements UserService{
 			i=2;
 		}
 		return i;
-	}
-	@Override
-	public String login(String username, String password) {
-		// TODO Auto-generated method stub
-		
-		return null;
 	}
 	
 	

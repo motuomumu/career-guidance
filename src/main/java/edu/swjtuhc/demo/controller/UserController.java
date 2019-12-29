@@ -31,6 +31,7 @@ public class UserController {
 			result.put("state", i);
 			return result;
 		}
+<<<<<<< HEAD
 		@RequestMapping(value = "/login", method = RequestMethod.POST)
 		public JSONObject login(@RequestBody UserRequest userrequest) {
 			JSONObject result = new JSONObject();
@@ -47,5 +48,12 @@ public class UserController {
 			}
 			return result;
 		}
+=======
+
+//		@RequestMapping(value = "/login", method = RequestMethod.POST)
+//		public JSONObject login(@RequestBody Sysuser user) {
+//			JSONObject result = new JSONObject();
+//		}
+>>>>>>> branch 'master' of https://github.com/xian-xian/shanxing.git
 		 
 }

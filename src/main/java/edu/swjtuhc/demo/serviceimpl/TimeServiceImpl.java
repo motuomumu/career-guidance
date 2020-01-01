@@ -5,11 +5,12 @@ import edu.swjtuhc.demo.model.Time;
 import edu.swjtuhc.demo.service.TimeService;
 
 public class TimeServiceImpl implements TimeService {
+	
 	private TimeMapper TimeMapper;
 	
 	public int createtime(Time t) {
 		//TODO Auto-generated method stub
-		if(t.getWeek()==null||t.getWeek().length()<1) {
+		if(t.getStarttime()==null||t.getEndtime().length()<1) {
 			return -1;
 		}else {
 			t.settId(getNextId());

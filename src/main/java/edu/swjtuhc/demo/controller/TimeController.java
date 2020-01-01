@@ -11,21 +11,23 @@ import edu.swjtuhc.demo.service.TimeService;
 import net.sf.json.JSONObject;
 
 @RestController
+//映射请求
 @RequestMapping("/time")
 public class TimeController {
 
+	//实例化
 	@Autowired
 	private TimeService TimeService;
 	
 	@RequestMapping(value="/time",method=RequestMethod.GET )
-	public JSONObject createtime(@RequestBody Time t) {
+	public JSONObject createtime(@RequestBody Time t) {//ResponseBody:接收前端传递给后端的json字符串中的数据
 		
 		JSONObject result = new JSONObject(); 
 		try {
 			int i=TimeService.createtime(t);
 			if (i==-1) {
 				result.put("state", "fail");
-				result.put("meg", "星期几不能为空");
+				result.put("meg", "时间不能为空");
 			}else if(i==0){
 				result.put("state", "fail");
 				result.put("meg", "内部出错");

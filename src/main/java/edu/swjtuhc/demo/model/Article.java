@@ -2,6 +2,8 @@ package edu.swjtuhc.demo.model;
 
 import java.util.Date;
 
+
+
 public class Article {
 	
 	private Long aId;

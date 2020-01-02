@@ -3,19 +3,23 @@ package edu.swjtuhc.demo.serviceimpl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import ch.qos.logback.core.subst.Token;
 import edu.swjtuhc.demo.mapper.ArticleMapper;
 import edu.swjtuhc.demo.model.Article;
 import edu.swjtuhc.demo.service.ArticleService;
 
+@Service
 public class ArticleServiceImpl implements ArticleService{
 
+	@Autowired
 	private ArticleMapper ArticleMapper;
 	
 	@Autowired
 	 public ArticleServiceImpl(
-			 Token token,
+			
 			 ArticleMapper articleMapper
 			 ) {
 		this.ArticleMapper=ArticleMapper;

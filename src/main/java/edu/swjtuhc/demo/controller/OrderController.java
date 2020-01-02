@@ -2,6 +2,7 @@ package edu.swjtuhc.demo.controller;
 
 import org.hibernate.validator.cfg.context.ReturnValueConstraintMappingContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,15 +12,16 @@ import edu.swjtuhc.demo.model.Order;
 import edu.swjtuhc.demo.service.OrderService;
 import net.sf.json.JSONObject;
 
+
 @RestController
 @RequestMapping("/user")
 public class OrderController {
 
 	@Autowired
-	private OrderService orderService;
+	 OrderService orderService;
 	
 	//上传 申请表
-	@RequestMapping(value = "/order",method=RequestMethod.POST)
+	@RequestMapping(value = "/order",method=RequestMethod.GET)
 	public JSONObject createorder(@RequestBody Order o) {
 		
 		JSONObject result=new JSONObject();

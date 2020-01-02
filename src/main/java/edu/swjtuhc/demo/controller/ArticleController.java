@@ -1,6 +1,7 @@
 package edu.swjtuhc.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,12 +11,13 @@ import edu.swjtuhc.demo.model.Article;
 import edu.swjtuhc.demo.service.ArticleService;
 import net.sf.json.JSONObject;
 
+
 @RestController
 @RequestMapping("/article")
 public class ArticleController {
 	
 	@Autowired
-	private ArticleService ArticleService;
+	 ArticleService ArticleService;
 	
 	//上传创建文章
 	

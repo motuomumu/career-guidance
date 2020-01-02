@@ -1,6 +1,7 @@
 package edu.swjtuhc.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.swjtuhc.demo.model.Time;
 import edu.swjtuhc.demo.service.TimeService;
 import net.sf.json.JSONObject;
+
 
 @RestController
 //映射请求

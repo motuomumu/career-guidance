@@ -3,12 +3,16 @@ package edu.swjtuhc.demo.serviceimpl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import edu.swjtuhc.demo.mapper.OrderMapper;
 import edu.swjtuhc.demo.model.Order;
+import edu.swjtuhc.demo.service.OrderService;
 
-public class OrderServiceImpl {
+@Service
+public class OrderServiceImpl implements OrderService {
 	
+	@Autowired
 	private OrderMapper OrderMapper;
 	
 	@Autowired
@@ -49,5 +53,15 @@ public class OrderServiceImpl {
 		}else {
 			return OrderMapper.deleteOrder(o);
 		}
+	}
+	@Override
+	public int updateorder(Order o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int deleteorder(Order o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

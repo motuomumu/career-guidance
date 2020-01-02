@@ -4,25 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.swjtuhc.demo.mapper.TimeMapper">
 	<resultMap id="TResultMap"
-		type="edu.swjtuhc.demo.model.TeacherTimeMapper">
+		type="edu.swjtuhc.demo.model.Time">
 		<id column="t_id" property="tId" jdbcType="BIGINT" />
-		<id column="u_id" property="uId" jdbcType="BIGINT" />
-		<result column="week" property="Week" jdbcType="VARCHAR" />
-		<result column="Section_1" property="Section1" jdbcType="VARCHAR" />
-		<result column="Section_2" property="Section2" jdbcType="VARCHAR" />
-		<result column="Section_3" property="Section3" jdbcType="VARCHAR" />
-		<result column="Section_4" property="Section4" jdbcType="VARCHAR" />
-		<result column="Section_5" property="Section5" jdbcType="VARCHAR" />
-		<result column="Section_6" property="Section6" jdbcType="VARCHAR" />
-		<result column="Section_7" property="Section7" jdbcType="VARCHAR" />
+		<result column="starttime" property="starttime" jdbcType="VARCHAR" />
+		<result column="endtime" property="endtime" jdbcType="VARCHAR" />
+		
 	</resultMap>	
+	<sql id="Column_List">
+	starttime,endtime
+	</sql>
 
 <insert id="createTime"
 		parameterType="edu.swjtuhc.demo.model.Time">
 		INSERT INTO
 		timetable
-		(t_id,u_id,week,Section_1,Section_2,Section_3,Section_4,Section_5,Section_6,Section_7,Section_8,Section_9,Section_10,Section_11,Section_12,Section_13)
+		(t_id,starttime,endtime)
 		values
-		(#{tId},#{uId},#{Week},#{Section1},#{Section2},#{Section3},#{Section4},#{Section5},#{Section6},#{Section7})
+		(#{tId},#{starttime},#{endtime})
 	</insert>
 </mapper> 

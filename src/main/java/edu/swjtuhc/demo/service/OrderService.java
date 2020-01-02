@@ -1,7 +1,10 @@
 package edu.swjtuhc.demo.service;
 
-import edu.swjtuhc.demo.model.Order;
 
+import org.springframework.stereotype.Service;
+
+import edu.swjtuhc.demo.model.Order;
+@Service
 public interface OrderService {
 
 	int createorder(Order o);

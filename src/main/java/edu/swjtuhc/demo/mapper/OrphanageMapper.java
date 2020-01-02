@@ -9,5 +9,5 @@ import edu.swjtuhc.demo.model.Orphanage;
 @Mapper
 public interface OrphanageMapper {
 
-	public List<Orphanage> selectAllOrphanage();
+	public List<Orphanage> getOrphanage();
 }

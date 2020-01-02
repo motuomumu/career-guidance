@@ -1,7 +1,7 @@
 package edu.swjtuhc.demo.model;
 
 public class SysUser {
-	int UID;
+	private int UID;
 	private String username;
 	private String password;
 	private String region;

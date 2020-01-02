@@ -20,7 +20,7 @@ public class OrphanageController {
 	@Autowired
 	OrphanageService OrphanageService;
 	
-	@RequestMapping(value = "/getList",method=RequestMethod.GET)
+	@RequestMapping(value = "/getlist",method=RequestMethod.GET)
 	public List<Orphanage> getList(){
 		
 		return OrphanageService.getList();

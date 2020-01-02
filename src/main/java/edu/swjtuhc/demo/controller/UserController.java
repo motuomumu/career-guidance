@@ -28,30 +28,36 @@ public class UserController {
 		@RequestMapping(value = "/register",method=RequestMethod.POST)
 		public JSONObject register(@RequestBody SysUser user){
 			JSONObject result =new JSONObject();
-		try {
 			int i=userService.register(user);
-        	if(i==-3) {
-        		result.put("state","fail");
-        		result.put("msg", "密码不能为空");
-        	}else if(i==-2) {
-        		result.put("state","fail");
-        		result.put("msg", "角色不能为空");
-        	}else if(i==-1) {
-        		result.put("state","fail");
-        		result.put("msg", "账号已存在");
-        	}else if(i==0) {
-        		result.put("state","fail");
-        		result.put("msg", "数据库内部错误");
-        	}else if(i==1) {
-        		result.put("state","success");
-        		result.put("msg", "注册成功");
-        	}
-		} catch (Exception e) {
-			e.printStackTrace();
-			result.put("state","fail");
-    		result.put("msg", "服务器内部错误");
-		}    	
-		return result;    	
+			result.put("state", i);
+			return result;
+			
+			
+			
+//		try {
+//			int i=userService.register(user);
+//        	if(i==-3) {
+//        		result.put("state","fail");
+//        		result.put("msg", "密码不能为空");
+//        	}else if(i==-2) {
+//        		result.put("state","fail");
+//        		result.put("msg", "角色不能为空");
+//        	}else if(i==-1) {
+//        		result.put("state","fail");
+//        		result.put("msg", "账号已存在");
+//        	}else if(i==0) {
+//        		result.put("state","fail");
+//        		result.put("msg", "数据库内部错误");
+//        	}else if(i==1) {
+//        		result.put("state","success");
+//        		result.put("msg", "注册成功");
+//        	}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			result.put("state","fail");
+//    		result.put("msg", "服务器内部错误");
+//		}    	
+//		return result;    	
     }
 
 		@RequestMapping(value = "/login", method = RequestMethod.POST)

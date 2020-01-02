@@ -7,12 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">
 		insert into sysuser
-		(username,password,region,role)
+		(uid,username,password,region,role)
 		values
-		(#{username},#{password},#{region},#{role})
+		(#{UID},#{username},#{password},#{region},#{role})
 	</insert>
    <select id="selectUserByUsername" parameterType="java.lang.String" 
    resultType="edu.swjtuhc.demo.model.SysUser">
    		select * from sysuser
+   		where
+   		username=#{username}
    </select>   
 </mapper>
